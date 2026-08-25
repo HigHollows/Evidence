@@ -1,0 +1,25 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore
+        run: dotnet restore src/MalwareAnalyzer.sln
+
+      - name: Build
+        run: dotnet build src/MalwareAnalyzer.sln --no-restore -c Release
+
+      - name: Test
+        run: dotnet test src/MalwareAnalyzer.sln --no-build -c Release --logger "console;verbosity=normal"
