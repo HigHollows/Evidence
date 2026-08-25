@@ -64,7 +64,7 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   réputation VirusTotal) depuis l'onglet **Code > Sigma** ; onglet **MITRE**
   associant chaque technique à des preuves précises (import notable ou règle
   YARA déclenchée) — jamais une technique attribuée sans preuve directe.
-- **Phase 7 (en cours)** — moteur de **corrélation** : agrège toutes les preuves
+- **Phase 7 (fait)** — moteur de **corrélation** : agrège toutes les preuves
   déjà collectées (comportement sandbox, YARA, imports notables, Sigma,
   réputation VirusTotal, IOC réseau) avec une hiérarchie de poids explicite
   (comportement observé > capacité statique > réputation) et un identifiant
@@ -76,10 +76,19 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   d'arguments POUR et CONTRE, jamais une certitude forcée. Nouvel onglet
   **Preuves** (double-clic pour remonter à la source), verdict dynamique dans
   **Résumé**.
+- **Phase 8 (en cours)** — assistant **IA optionnel**, compatible avec toute API
+  "chat completions" au format OpenAI (endpoint/modèle/clé configurables,
+  fonctionne avec un serveur local). Reçoit uniquement un contexte JSON compact
+  (verdict, preuves, hypothèses, contradictions, couverture) — jamais le fichier
+  complet, jamais une clé API. Prompt système strict (20 règles, section 53) :
+  interdiction d'inventer une preuve/API/domaine, obligation de citer des
+  identifiants réels, de signaler les limites, de fournir les arguments contre
+  son propre verdict. Un garde-fou automatique signale toute citation d'un
+  identifiant de preuve absent du contexte fourni. Bulle discrète en bas de
+  fenêtre ; toutes les analyses techniques continuent de fonctionner sans elle.
 
-Aucun provider de réputation supplémentaire ni IA n'est encore branché : la
-fenêtre l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux
-résultat.
+Aucun provider de réputation supplémentaire n'est encore branché : la fenêtre
+l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
 
 ## Stack technique
 
