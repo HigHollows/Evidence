@@ -76,7 +76,7 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   d'arguments POUR et CONTRE, jamais une certitude forcée. Nouvel onglet
   **Preuves** (double-clic pour remonter à la source), verdict dynamique dans
   **Résumé**.
-- **Phase 8 (en cours)** — assistant **IA optionnel**, compatible avec toute API
+- **Phase 8 (fait)** — assistant **IA optionnel**, compatible avec toute API
   "chat completions" au format OpenAI (endpoint/modèle/clé configurables,
   fonctionne avec un serveur local). Reçoit uniquement un contexte JSON compact
   (verdict, preuves, hypothèses, contradictions, couverture) — jamais le fichier
@@ -86,6 +86,15 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   son propre verdict. Un garde-fou automatique signale toute citation d'un
   identifiant de preuve absent du contexte fourni. Bulle discrète en bas de
   fenêtre ; toutes les analyses techniques continuent de fonctionner sans elle.
+- **Phase 9 (en cours)** — **rapports HTML/PDF/JSON** (menu Fichier), générés
+  uniquement à partir des données déjà collectées : verdict en tête, détails
+  progressifs, chaque preuve avec son identifiant. Le PDF est écrit directement
+  (police à chasse fixe standard, pagination automatique), sans bibliothèque
+  tierce non vérifiable. **Analyse d'archives ZIP** récursive (onglet
+  **Fichiers**) avec protections contre les archives excessives (profondeur,
+  nombre de fichiers, taille cumulée, taux de compression suspect) ; RAR/7Z
+  sont détectés mais pas encore décompressés (nécessiteraient une dépendance
+  tierce hors du contrôle de ce projet).
 
 Aucun provider de réputation supplémentaire n'est encore branché : la fenêtre
 l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.

@@ -12,8 +12,8 @@ Chaque phase doit fonctionner correctement avant de passer a la suivante.
 | 5 | IOC + analyse reseau + timeline | Fait |
 | 6 | YARA + Sigma + MITRE ATT&CK | Fait |
 | 7 | Moteur de correlation | Fait |
-| 8 | Assistant IA (optionnel) | En cours |
-| 9 | Rapports HTML/PDF/JSON | A venir |
+| 8 | Assistant IA (optionnel) | Fait |
+| 9 | Rapports HTML/PDF/JSON + analyse d'archives ZIP | En cours |
 | 10 | Quarantaine + historique avance + comparaison d'echantillons | A venir |
 | 11 | Tests de securite et de robustesse | A venir |
 
