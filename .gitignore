@@ -31,6 +31,9 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+## Session-local tooling state (not project content)
+.claude/
+
 ## Never commit
 *.pfx
 *.pem

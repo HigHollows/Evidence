@@ -23,14 +23,22 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
 - **Phase 1 (fait)** — application Windows, sélection de fichier (glisser-déposer ou
   dialogue), calcul de hash (SHA-256/SHA-1/MD5), détection de type par signature
   binaire (pas par extension), historique local SQLite.
-- **Phase 2 (en cours)** — analyse statique PE (EXE/DLL/SYS) : headers, sections et
+- **Phase 2 (fait)** — analyse statique PE (EXE/DLL/SYS) : headers, sections et
   leur entropie, imports/exports, table d'imports "notables" catégorisée en
   **capacités potentielles** (jamais des preuves de comportement), chaînes
   ASCII/UTF-16 avec recherche, détection d'anomalies structurelles (empaquetage
   possible, sections exécutables+inscriptibles, etc.), présence et signataire
   Authenticode (sans validation de chaîne de confiance dans cette phase).
+- **Phase 3 (en cours)** — provider VirusTotal : clé API personnelle stockée
+  chiffrée (DPAPI) localement, jamais journalisée ni transmise à l'IA ; consultation
+  par hash uniquement (pas d'upload du fichier) avec consentement explicite avant
+  chaque requête ; mise en cache locale (24h) pour éviter les requêtes inutiles ;
+  gestion des erreurs (clé invalide, quota atteint, service injoignable) sans
+  bloquer le reste de l'analyse ; fenêtre **Outils > Fournisseurs** pour
+  ajouter/tester/supprimer la clé. Architecture `IExternalProvider` posée pour
+  brancher les futurs providers (sandbox, réputation, IA...) de la même façon.
 
-Aucun provider externe (VirusTotal, sandbox, IA) n'est encore branché : la fenêtre
+Aucun autre provider externe (sandbox, IA) n'est encore branché : la fenêtre
 l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
 
 ## Stack technique
@@ -38,7 +46,8 @@ l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat
 - **.NET 8 / C# / WPF** — stabilité, intégration native Windows (Credential
   Manager/DPAPI pour les futurs secrets, associations de fichiers, menu contextuel),
   packaging `.exe` simple, écosystème mature pour l'analyse PE et le parsing binaire.
-- **SQLite** (`Microsoft.Data.Sqlite`) pour l'historique local.
+- **SQLite** (`Microsoft.Data.Sqlite`) pour l'historique local et le cache providers.
+- **DPAPI** (`System.Security.Cryptography.ProtectedData`) pour chiffrer les clés API localement.
 - **xUnit** pour les tests.
 
 ## Structure du dépôt
