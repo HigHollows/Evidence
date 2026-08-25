@@ -31,7 +31,7 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   ASCII/UTF-16 avec recherche, détection d'anomalies structurelles (empaquetage
   possible, sections exécutables+inscriptibles, etc.), présence et signataire
   Authenticode (sans validation de chaîne de confiance dans cette phase).
-- **Phase 3 (en cours)** — provider VirusTotal : clé API personnelle stockée
+- **Phase 3 (fait)** — provider VirusTotal : clé API personnelle stockée
   chiffrée (DPAPI) localement, jamais journalisée ni transmise à l'IA ; consultation
   par hash uniquement (pas d'upload du fichier) avec consentement explicite avant
   chaque requête ; mise en cache locale (24h) pour éviter les requêtes inutiles ;
@@ -39,8 +39,15 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   bloquer le reste de l'analyse ; fenêtre **Outils > Fournisseurs** pour
   ajouter/tester/supprimer la clé. Architecture `IExternalProvider` posée pour
   brancher les futurs providers (sandbox, réputation, IA...) de la même façon.
+- **Phase 4 (en cours)** — provider **Hybrid Analysis (Falcon Sandbox)** : recherche
+  de rapports sandbox *publics déjà existants* pour un hash (`GET /search/hash`,
+  clé personnelle) — cette phase ne soumet jamais le fichier pour une nouvelle
+  exécution et ne déclenche donc aucune analyse dynamique automatique. Résultat
+  affiché avec verdict, score, famille signalée et environnement, toujours
+  accompagné du rappel qu'un rapport d'un autre utilisateur ne constitue pas une
+  preuve pour ce dossier. Nouvel onglet **Comportement** dans l'UI.
 
-Aucun autre provider externe (sandbox, IA) n'est encore branché : la fenêtre
+Aucun autre provider externe (réputation, IA) n'est encore branché : la fenêtre
 l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
 
 ## Stack technique

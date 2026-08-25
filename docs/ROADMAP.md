@@ -7,8 +7,8 @@ Chaque phase doit fonctionner correctement avant de passer a la suivante.
 |---|---|---|
 | 1 | Application Windows + UI + selection fichier + hash + historique local | Fait |
 | 2 | Analyse statique PE (headers, sections, imports/exports, strings, entropie) | Fait |
-| 3 | VirusTotal + framework multi-provider | En cours |
-| 4 | Sandboxes cloud (analyse comportementale) | A venir |
+| 3 | VirusTotal + framework multi-provider | Fait |
+| 4 | Sandboxes cloud (analyse comportementale) | En cours |
 | 5 | IOC + analyse reseau + timeline | A venir |
 | 6 | YARA + Sigma + MITRE ATT&CK | A venir |
 | 7 | Moteur de correlation | A venir |
