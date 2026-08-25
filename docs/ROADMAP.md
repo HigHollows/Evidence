@@ -5,8 +5,8 @@ Chaque phase doit fonctionner correctement avant de passer a la suivante.
 
 | Phase | Contenu | Statut |
 |---|---|---|
-| 1 | Application Windows + UI + selection fichier + hash + historique local | En cours |
-| 2 | Analyse statique PE (headers, sections, imports/exports, strings, entropie) | A venir |
+| 1 | Application Windows + UI + selection fichier + hash + historique local | Fait |
+| 2 | Analyse statique PE (headers, sections, imports/exports, strings, entropie) | En cours |
 | 3 | VirusTotal + framework multi-provider | A venir |
 | 4 | Sandboxes cloud (analyse comportementale) | A venir |
 | 5 | IOC + analyse reseau + timeline | A venir |

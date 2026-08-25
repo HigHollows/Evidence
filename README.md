@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.png" alt="Evidence" width="480" /></p>
+
 # Malware Analyzer
 
 Outil Windows d'**investigation** de fichiers potentiellement malveillants — pas un
@@ -17,13 +19,19 @@ un fichier peut être `INCONCLUSIF` si les preuves ne suffisent pas à conclure.
 ## État du projet
 
 Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
-**Phase actuelle : Phase 1** — application Windows, sélection de fichier
-(glisser-déposer ou dialogue), calcul de hash (SHA-256/SHA-1/MD5), détection de type
-par signature binaire (pas par extension), historique local SQLite.
 
-Aucune analyse statique, aucun provider externe (VirusTotal, sandbox, IA) n'est
-encore branché : la fenêtre l'indique explicitement (`INCONCLUSIF`) plutôt que
-d'afficher un faux résultat.
+- **Phase 1 (fait)** — application Windows, sélection de fichier (glisser-déposer ou
+  dialogue), calcul de hash (SHA-256/SHA-1/MD5), détection de type par signature
+  binaire (pas par extension), historique local SQLite.
+- **Phase 2 (en cours)** — analyse statique PE (EXE/DLL/SYS) : headers, sections et
+  leur entropie, imports/exports, table d'imports "notables" catégorisée en
+  **capacités potentielles** (jamais des preuves de comportement), chaînes
+  ASCII/UTF-16 avec recherche, détection d'anomalies structurelles (empaquetage
+  possible, sections exécutables+inscriptibles, etc.), présence et signataire
+  Authenticode (sans validation de chaîne de confiance dans cette phase).
+
+Aucun provider externe (VirusTotal, sandbox, IA) n'est encore branché : la fenêtre
+l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
 
 ## Stack technique
 
