@@ -46,7 +46,7 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   affiché avec verdict, score, famille signalée et environnement, toujours
   accompagné du rappel qu'un rapport d'un autre utilisateur ne constitue pas une
   preuve pour ce dossier. Nouvel onglet **Comportement** dans l'UI.
-- **Phase 5 (en cours)** — extraction d'**IOC** (hash du fichier en `OBSERVÉ`,
+- **Phase 5 (fait)** — extraction d'**IOC** (hash du fichier en `OBSERVÉ`,
   URL/IP/domaines/chemins/clés de registre/emails extraits des chaînes statiques
   en `POSSIBLE`), export TXT/CSV/JSON ; onglet **Réseau** présentant ces mêmes
   indicateurs réseau avec un bandeau explicite "POTENTIEL, pas OBSERVÉ" (ce ne
@@ -54,6 +54,16 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   retraçant les actions de *cet outil* (hash calculé, requêtes providers
   envoyées), explicitement distinguée d'une timeline d'événements d'exécution
   que cette phase ne produit pas encore.
+- **Phase 6 (en cours)** — moteur **YARA** (sous-ensemble maison documenté : pas
+  de regex ni de modules, pour rester fiable sans dépendance native non
+  vérifiable) avec règles intégrées d'exemple et règles personnalisées
+  (`%LOCALAPPDATA%\MalwareAnalyzer\yara_rules\*.yar`), activables/désactivables
+  et ré-analysables depuis l'onglet **Code > YARA** ; moteur **Sigma** (format
+  simplifié propre au projet, pas du YAML Sigma standard) évaluant les
+  observations déjà disponibles (imports notables, verdicts sandbox publics,
+  réputation VirusTotal) depuis l'onglet **Code > Sigma** ; onglet **MITRE**
+  associant chaque technique à des preuves précises (import notable ou règle
+  YARA déclenchée) — jamais une technique attribuée sans preuve directe.
 
 Aucun autre provider externe (réputation, IA) n'est encore branché : la fenêtre
 l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.

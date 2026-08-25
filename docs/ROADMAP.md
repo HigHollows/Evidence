@@ -9,8 +9,8 @@ Chaque phase doit fonctionner correctement avant de passer a la suivante.
 | 2 | Analyse statique PE (headers, sections, imports/exports, strings, entropie) | Fait |
 | 3 | VirusTotal + framework multi-provider | Fait |
 | 4 | Sandboxes cloud (analyse comportementale) | Fait |
-| 5 | IOC + analyse reseau + timeline | En cours |
-| 6 | YARA + Sigma + MITRE ATT&CK | A venir |
+| 5 | IOC + analyse reseau + timeline | Fait |
+| 6 | YARA + Sigma + MITRE ATT&CK | En cours |
 | 7 | Moteur de correlation | A venir |
 | 8 | Assistant IA (optionnel) | A venir |
 | 9 | Rapports HTML/PDF/JSON | A venir |
