@@ -16,14 +16,17 @@ artifacts/
 .vscode/
 
 ## Local app data (never commit secrets, samples, or user history)
+## Note: runtime data lives under %LOCALAPPDATA%\MalwareAnalyzer, outside this
+## repo, so these patterns are anchored to the repo root to avoid accidentally
+## matching source folders with the same name (e.g. src/.../Secrets/).
 *.db
 *.db-shm
 *.db-wal
 appsettings.local.json
-secrets/
-data/history/
-data/samples/
-data/reports/
+/secrets/
+/data/history/
+/data/samples/
+/data/reports/
 *.log
 
 ## OS
