@@ -39,13 +39,21 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   bloquer le reste de l'analyse ; fenêtre **Outils > Fournisseurs** pour
   ajouter/tester/supprimer la clé. Architecture `IExternalProvider` posée pour
   brancher les futurs providers (sandbox, réputation, IA...) de la même façon.
-- **Phase 4 (en cours)** — provider **Hybrid Analysis (Falcon Sandbox)** : recherche
+- **Phase 4 (fait)** — provider **Hybrid Analysis (Falcon Sandbox)** : recherche
   de rapports sandbox *publics déjà existants* pour un hash (`GET /search/hash`,
   clé personnelle) — cette phase ne soumet jamais le fichier pour une nouvelle
   exécution et ne déclenche donc aucune analyse dynamique automatique. Résultat
   affiché avec verdict, score, famille signalée et environnement, toujours
   accompagné du rappel qu'un rapport d'un autre utilisateur ne constitue pas une
   preuve pour ce dossier. Nouvel onglet **Comportement** dans l'UI.
+- **Phase 5 (en cours)** — extraction d'**IOC** (hash du fichier en `OBSERVÉ`,
+  URL/IP/domaines/chemins/clés de registre/emails extraits des chaînes statiques
+  en `POSSIBLE`), export TXT/CSV/JSON ; onglet **Réseau** présentant ces mêmes
+  indicateurs réseau avec un bandeau explicite "POTENTIEL, pas OBSERVÉ" (ce ne
+  sont pas des connexions capturées pendant une exécution) ; onglet **Timeline**
+  retraçant les actions de *cet outil* (hash calculé, requêtes providers
+  envoyées), explicitement distinguée d'une timeline d'événements d'exécution
+  que cette phase ne produit pas encore.
 
 Aucun autre provider externe (réputation, IA) n'est encore branché : la fenêtre
 l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
