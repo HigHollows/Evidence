@@ -54,7 +54,7 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   retraçant les actions de *cet outil* (hash calculé, requêtes providers
   envoyées), explicitement distinguée d'une timeline d'événements d'exécution
   que cette phase ne produit pas encore.
-- **Phase 6 (en cours)** — moteur **YARA** (sous-ensemble maison documenté : pas
+- **Phase 6 (fait)** — moteur **YARA** (sous-ensemble maison documenté : pas
   de regex ni de modules, pour rester fiable sans dépendance native non
   vérifiable) avec règles intégrées d'exemple et règles personnalisées
   (`%LOCALAPPDATA%\MalwareAnalyzer\yara_rules\*.yar`), activables/désactivables
@@ -64,9 +64,22 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   réputation VirusTotal) depuis l'onglet **Code > Sigma** ; onglet **MITRE**
   associant chaque technique à des preuves précises (import notable ou règle
   YARA déclenchée) — jamais une technique attribuée sans preuve directe.
+- **Phase 7 (en cours)** — moteur de **corrélation** : agrège toutes les preuves
+  déjà collectées (comportement sandbox, YARA, imports notables, Sigma,
+  réputation VirusTotal, IOC réseau) avec une hiérarchie de poids explicite
+  (comportement observé > capacité statique > réputation) et un identifiant
+  traçable par preuve (`BEHAVIOR-x`, `CODE-x`, `NET-x`, `IOC-x`, `REP-x`) ;
+  calcule une **couverture d'analyse** qui force `INCONCLUSIF` si trop de
+  modules manquent ; détecte les **contradictions entre sources** avec leurs
+  explications possibles ; propose des hypothèses de classification (Stealer,
+  Backdoor/RAT, Spyware/Keylogger, Downloader) toujours accompagnées
+  d'arguments POUR et CONTRE, jamais une certitude forcée. Nouvel onglet
+  **Preuves** (double-clic pour remonter à la source), verdict dynamique dans
+  **Résumé**.
 
-Aucun autre provider externe (réputation, IA) n'est encore branché : la fenêtre
-l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
+Aucun provider de réputation supplémentaire ni IA n'est encore branché : la
+fenêtre l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux
+résultat.
 
 ## Stack technique
 
