@@ -1,5 +1,7 @@
 <p align="center"><img src="assets/banner.png" alt="Evidence" width="480" /></p>
 
+[![build](https://github.com/HigHollows/Evidence/actions/workflows/build.yml/badge.svg)](https://github.com/HigHollows/Evidence/actions/workflows/build.yml)
+
 # Malware Analyzer
 
 Outil Windows d'**investigation** de fichiers potentiellement malveillants — pas un
