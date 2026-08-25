@@ -13,8 +13,8 @@ Chaque phase doit fonctionner correctement avant de passer a la suivante.
 | 6 | YARA + Sigma + MITRE ATT&CK | Fait |
 | 7 | Moteur de correlation | Fait |
 | 8 | Assistant IA (optionnel) | Fait |
-| 9 | Rapports HTML/PDF/JSON + analyse d'archives ZIP | En cours |
-| 10 | Quarantaine + historique avance + comparaison d'echantillons | A venir |
+| 9 | Rapports HTML/PDF/JSON + analyse d'archives ZIP | Fait |
+| 10 | Quarantaine + historique avance + comparaison d'echantillons | En cours |
 | 11 | Tests de securite et de robustesse | A venir |
 
 ## Regle de non-regression fonctionnelle

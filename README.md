@@ -86,7 +86,7 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   son propre verdict. Un garde-fou automatique signale toute citation d'un
   identifiant de preuve absent du contexte fourni. Bulle discrète en bas de
   fenêtre ; toutes les analyses techniques continuent de fonctionner sans elle.
-- **Phase 9 (en cours)** — **rapports HTML/PDF/JSON** (menu Fichier), générés
+- **Phase 9 (fait)** — **rapports HTML/PDF/JSON** (menu Fichier), générés
   uniquement à partir des données déjà collectées : verdict en tête, détails
   progressifs, chaque preuve avec son identifiant. Le PDF est écrit directement
   (police à chasse fixe standard, pagination automatique), sans bibliothèque
@@ -95,6 +95,16 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   nombre de fichiers, taille cumulée, taux de compression suspect) ; RAR/7Z
   sont détectés mais pas encore décompressés (nécessiteraient une dépendance
   tierce hors du contrôle de ce projet).
+- **Phase 10 (en cours)** — **quarantaine** (Outils > Quarantaine) : déplace un
+  fichier vers un dossier dédié sous un nom non exécutable, avec confirmation
+  explicite pour chaque action (mise en quarantaine, restauration, suppression
+  définitive) — jamais automatique. **Verdict utilisateur** (section Résumé) :
+  l'utilisateur peut consigner son propre verdict et des notes à côté du
+  verdict automatique, persistés localement. **Comparaison d'échantillons**
+  (Outils > Comparaison) : compare en direct deux fichiers choisis (hash,
+  sections, imports, IOC), toujours avec la formulation prudente qu'une
+  similarité suggère une relation potentielle sans prouver une appartenance à
+  la même famille.
 
 Aucun provider de réputation supplémentaire n'est encore branché : la fenêtre
 l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
