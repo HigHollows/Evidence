@@ -51,15 +51,18 @@ une copie de leur interface), livree par etapes.
   affiche le detail dans l'Inspecteur. Le tableau chronologique existant est
   conserve en dessous (donnees exactes, triables) — la frise est une vue
   complementaire, pas un remplacement.
-- **Vue Reseau** : non retouchee dans cette etape. Une vraie disposition a
-  trois colonnes (Processus / Connexions / Details, section 10) impliquerait
-  un noeud "Processus" que ce projet n'a pas les moyens d'etablir
-  honnetement : il n'existe aucune telemetrie de processus reelle a ce stade
-  (uniquement des IOC extraits de chaines statiques). Fabriquer une colonne
-  "Processus" laisserait croire a une capacite d'analyse comportementale qui
-  n'existe pas (violerait le principe directeur du projet). La vue Reseau
-  reste donc un tableau + Inspecteur au clic, avec son bandeau "POTENTIEL,
-  pas OBSERVE" deja en place.
+- **Vue Reseau** (ajoute apres coup, meme etape) : disposition a deux
+  volets plutot que les trois colonnes de la maquette (Processus /
+  Connexions / Details). A gauche, un arbre **fichier analyse -> type
+  d'indicateur (Domaine/URL/IP) -> valeur** filtre le tableau a droite ;
+  l'Inspecteur (dock droit) affiche le detail au clic. Le noeud racine est le
+  fichier reellement analyse (fait observe), pas un "processus" invente :
+  fabriquer une colonne "Processus" avec une arborescence d'evenements
+  reseau donnerait l'illusion d'une capacite de telemetrie comportementale
+  que ce projet n'a pas dans cette phase (uniquement des IOC extraits de
+  chaines statiques, deja marques "POTENTIEL, pas OBSERVE"). Ce compromis
+  garde l'esprit de la maquette (navigation par arbre + details) sans rien
+  affirmer de faux.
 
 ## Etapes suivantes (pas encore commencees)
 
