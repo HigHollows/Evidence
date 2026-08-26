@@ -39,13 +39,30 @@ une copie de leur interface), livree par etapes.
   demarrage, navigation reelle depuis l'explorateur bascule correctement vers
   le document d'analyse.
 
+## Etape 2 — MITRE en arbre + timeline visuelle (fait)
+
+- **MITRE ATT&CK** : la liste de cartes est remplacee par un `TreeView`
+  (technique -> preuves, section 13 du cahier des charges). Selectionner une
+  technique ou une preuve l'affiche dans l'Inspecteur.
+- **Timeline** : ajout d'une vraie frise horizontale au-dessus du tableau
+  chronologique (un point par evenement, positionne dans l'ordre, avec un
+  slider de zoom qui espace/resserre les points et un `ScrollViewer`
+  horizontal pour le deplacement). Cliquer un point ou une ligne du tableau
+  affiche le detail dans l'Inspecteur. Le tableau chronologique existant est
+  conserve en dessous (donnees exactes, triables) — la frise est une vue
+  complementaire, pas un remplacement.
+- **Vue Reseau** : non retouchee dans cette etape. Une vraie disposition a
+  trois colonnes (Processus / Connexions / Details, section 10) impliquerait
+  un noeud "Processus" que ce projet n'a pas les moyens d'etablir
+  honnetement : il n'existe aucune telemetrie de processus reelle a ce stade
+  (uniquement des IOC extraits de chaines statiques). Fabriquer une colonne
+  "Processus" laisserait croire a une capacite d'analyse comportementale qui
+  n'existe pas (violerait le principe directeur du projet). La vue Reseau
+  reste donc un tableau + Inspecteur au clic, avec son bandeau "POTENTIEL,
+  pas OBSERVE" deja en place.
+
 ## Etapes suivantes (pas encore commencees)
 
-- Densifier davantage les vues **Preuves**, **IOC**, **Reseau**, **MITRE**
-  (tables/arbres plus proches des maquettes fournies).
-- Timeline horizontale avec zoom/deplacement (actuellement un tableau
-  chronologique, pas encore une frise visuelle).
-- Vue **Reseau** en trois colonnes (Processus / Connexions / Details).
 - Theme AvalonDock plus pousse (couleurs des onglets/poignees de
   redimensionnement alignees pixel-pres sur la palette du projet).
 - Sauvegarde/restauration de la disposition des panneaux (serialisation
