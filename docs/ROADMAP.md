@@ -14,8 +14,8 @@ Chaque phase doit fonctionner correctement avant de passer a la suivante.
 | 7 | Moteur de correlation | Fait |
 | 8 | Assistant IA (optionnel) | Fait |
 | 9 | Rapports HTML/PDF/JSON + analyse d'archives ZIP | Fait |
-| 10 | Quarantaine + historique avance + comparaison d'echantillons | En cours |
-| 11 | Tests de securite et de robustesse | A venir |
+| 10 | Quarantaine + historique avance + comparaison d'echantillons | Fait |
+| 11 | Tests de securite et de robustesse | Fait |
 
 ## Regle de non-regression fonctionnelle
 

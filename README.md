@@ -105,6 +105,19 @@ Développement par phases, voir [docs/ROADMAP.md](docs/ROADMAP.md).
   sections, imports, IOC), toujours avec la formulation prudente qu'une
   similarité suggère une relation potentielle sans prouver une appartenance à
   la même famille.
+- **Phase 11 (fait)** — **tests de sécurité et de robustesse** (section 59) :
+  fuzzing du parseur PE (octets aléatoires et PE valide muté, des centaines
+  d'itérations, jamais d'exception non gérée) ; archives ZIP corrompues,
+  tronquées ou imbriquées au-delà de la profondeur autorisée ; règles
+  YARA/Sigma malformées ou aléatoires (le moteur remonte des erreurs, ne lève
+  jamais) ; providers VirusTotal/Hybrid Analysis testés avec clé invalide,
+  quota atteint, service injoignable et réponse HTTP 200 au corps illisible ;
+  cache local corrompu (retombe sur une requête fraîche) ; fichier légitime
+  avec couverture complète et tous les signaux propres (ne produit jamais un
+  verdict alarmant — protection contre le faux positif). Deux vrais bugs de
+  robustesse trouvés et corrigés à cette occasion : une exception JSON non
+  interceptée pouvait faire planter une consultation VirusTotal/Hybrid
+  Analysis en cas de réponse illisible ou de cache local corrompu.
 
 Aucun provider de réputation supplémentaire n'est encore branché : la fenêtre
 l'indique explicitement (`INCONCLUSIF`) plutôt que d'afficher un faux résultat.
